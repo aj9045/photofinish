@@ -9,7 +9,10 @@ describe UsersController do
 
   describe "the Get routes" do
     describe "Get #index" do
-      it "renders the :index template"
+      it "renders the :index template" do
+        get :index
+        expect(response).to render_template :index
+      end
     end
 
     describe "Get #show" do
