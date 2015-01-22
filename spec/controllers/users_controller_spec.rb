@@ -17,22 +17,22 @@ describe UsersController do
 
     describe "Get #show" do
       it "assigns requested user to @user" do
-        get :show, id: user
-        expect(assigns(:user)).to eq user
+        get :show, id: @user
+        expect(assigns(:user)).to eq @user
       end
       it "renders the :show template" do
-        get :show, id: user
+        get :show, id: @user
         expect(response).to render_template :show
       end
     end
 
     describe "Get #edit" do
       it "assigns requested user to @user" do
-        get :edit, id: user
-        expect(assigns(:user)).to eq user
+        get :edit, id: @user
+        expect(assigns(:user)).to eq @user
       end
       it "renders the :edit template" do
-        get :edit, id: user
+        get :edit, id: @user
         expect(response).to render_template :edit
       end
     end
