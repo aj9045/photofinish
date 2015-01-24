@@ -6,5 +6,5 @@ class User < ActiveRecord::Base
 
   validates_uniqueness_of :username, :email
 
-  # has_many :photos, :dependent => :destroy
+  has_many :photos, :dependent => :destroy
 end
