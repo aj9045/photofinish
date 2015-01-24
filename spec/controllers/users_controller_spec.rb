@@ -3,7 +3,7 @@ require "rails_helper"
 describe UsersController do
 
   before do
-    @user = FactoryGirl.create(:user)
+    @user = create(:user)
     session[:user_id] = @user.id
   end
 
@@ -52,10 +52,10 @@ describe UsersController do
   describe "Post #create" do
     context "valid attributes" do
       it "saves new user" do
-        expect{ post :create, user: attributes_for(:contact)}.to change(User, :count).by(1)
+        expect{ post :create, user: attributes_for(:user) }.to change(User, :count).by(1)
       end
-      it "redirects to users#show" do
-        post :create, user: attributes_for(:contact)
+      it "redirects to root_path" do
+        post :create, user: attributes_for(:user)
         expect(response).to redirect_to root_path
       end
     end
@@ -80,7 +80,7 @@ describe UsersController do
         expect(assigns(:user)).to eq(@user)
       end
       it "updates the user's attributes" do
-        put update, id: @user,
+        put :update, id: @user,
           user: attributes_for(:user,
             username: "valid_username")
         @user.reload
@@ -98,25 +98,29 @@ describe UsersController do
             username: nil,
             email: "invalid_email@dbc.com")
         @user.reload
-        expect(@user.username).to eq("test_username")
+        expect(@user.username).to_not eq nil
         expect(@user.email).to_not eq("invalid_email@dbc.com")
       end
       it "redirects to users#edit" do
-        put :update, id: @user, user: atributes_for(invalid_contact)
+        put :update, id: @user, user: attributes_for(:invalid_user)
         expect(response).to render_template :edit
       end
     end
   end
 
   describe "Delete #destroy" do
+    it "should locate the requested user" do
+      delete :destroy, id: @user
+      expect(assigns[:user]).to eq(@user)
+    end
+    it "should validate its the same as the logged-in user" do
+      delete :destroy, id: @user
+      expect(session[:user_id]).to eq(@user.id)
+    end
     it "deletes the requested user" do
       expect {
         delete :destroy, id: @user
       }.to change(User, :count).by(-1)
-    end
-    it "sets the session[:user_id] to nil" do
-      delete :destroy, id: @user
-      expect(session[:user_id]).to eq nil
     end
     it "redirects to root_path" do
       delete :destroy, id: @user
