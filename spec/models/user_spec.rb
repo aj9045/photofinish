@@ -27,7 +27,7 @@ describe User do
     it { should validate_uniqueness_of :email }
   end
 
-  # describe "associations" do
-  #   it { should have_many :photos }
-  # end
+  describe "associations" do
+    it { should have_many :photos }
+  end
 end
