@@ -51,11 +51,11 @@ describe PhotosController do
   describe "Post #create" do
     context "valid attributes" do
       it "saves new photo" do
-        expect{ post :create, photo: attributes_for(:photo) }.to change(Photo, :count).by(1)
+        expect{ post :create, photo: attributes_for(:photo)}.to change(Photo, :count).by(1)
       end
-      it "redirects to root_path" do
+      it "redirects to new photo" do
         post :create, photo: attributes_for(:photo)
-        expect(response).to redirect_to root_path
+        expect(response).to redirect_to @photo
       end
     end
 
