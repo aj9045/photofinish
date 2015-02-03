@@ -3,7 +3,9 @@ require "rails_helper"
 describe PhotosController do
 
   before do
-    @photo = create(:photo)
+    @user = create(:user)
+    @photo = create(:photo, user_id: @user.id)
+    session[:user_id] = @user.id
   end
 
   describe "the Get routes" do
@@ -51,11 +53,11 @@ describe PhotosController do
   describe "Post #create" do
     context "valid attributes" do
       it "saves new photo" do
-        expect{ post :create, photo: attributes_for(:photo)}.to change(Photo, :count).by(1)
+        expect{ post :create, photo: attributes_for(:photo, user_id: @user.id)}.to change(Photo, :count).by(1)
       end
       it "redirects to new photo" do
-        post :create, photo: attributes_for(:photo)
-        expect(response).to redirect_to @photo
+        post :create, photo: attributes_for(:photo, user_id: @user.id)
+        expect(response).to redirect_to photo_path(assigns(:photo))
       end
     end
 
