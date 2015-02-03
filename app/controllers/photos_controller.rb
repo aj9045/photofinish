@@ -33,11 +33,11 @@ class PhotosController < ApplicationController
   end
 
   def destroy
-    if @photo.user_id = session[:user_id]
+    if @photo.user_id == session[:user_id]
       @photo.destroy
       redirect_to root_path
     else
-      redirect_to @user
+      redirect_to @photo
     end
   end
 
