@@ -1,1 +1,14 @@
-new.html.erb
+<%= form_for @user do |f| %>
+    <h3>Sign Up!</h3>
+
+    <%= f.label :username, "Username*" %>
+    <%= f.text_field :username, placeholder: "username" %>
+
+    <%= f.label :email, "Email*" %>
+    <%= f.text_field :email, placeholder: "email" %>
+
+    <%= f.label :about %>
+    <%= f.text_area :about, placeholder: "Tell a little about yourse;f!" %>
+
+    <%= f.submit "Submit" %>
+<% end %>
