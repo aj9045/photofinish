@@ -1,1 +1,16 @@
-edit.html.erb
+<%= form_for @user do |f| %>
+    <h3>Edit Your Profile</h3>
+
+    <%= f.label :username, "Username*" %>
+    <%= f.text_field :username %>
+
+    <%= f.label :email, "Email*" %>
+    <%= f.text_field :email %>
+
+    <%= f.label :about %>
+    <%= f.text_area :about, placeholder: "Tell a little about yourself!" %>
+
+    <%= f.submit "Save" %>
+
+  <%= link_to "Delete Account", user_path(@user), method: :delete, data: { confirm: "Are you sure?" } %>
+<% end %>
