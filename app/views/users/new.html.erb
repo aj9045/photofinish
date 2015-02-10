@@ -10,5 +10,12 @@
     <%= f.label :about %>
     <%= f.text_area :about, placeholder: "Tell a little about yourself!" %>
 
+    <%= f.label :Password, "Password*" %>
+    <%= f.password_field :password, placeholder: "Password" %>
+
+    <%= f.label :password_confrimation, "Password Confirmation*" %>
+    <%= f.password_field :password_confirmation, placeholder: "Confirm Password" %>
+
+
     <%= f.submit "Submit" %>
 <% end %>
