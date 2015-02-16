@@ -1,5 +1,13 @@
 <h2>Someone's Profile</h2>
 
-<%= @user.username %>
+<p><%= image_tag @user.image.url(:thumb) %> <%= @user.username %></p>
+<p><%= @user.email %></p>
+<p><%= @user.about %></p>
 
 <%= link_to "Edit Profile", edit_user_path(@user) %>
+
+<ul>
+  <% @user.photos.each do |photo| %>
+  <li><%= image_tag photo.photo.url(:medium) %></li>
+  <% end %>
+</ul>
