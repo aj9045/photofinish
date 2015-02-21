@@ -1,5 +1,5 @@
 <h2>A particular photo</h2>
 
 <%= image_tag @photo.photo.url(:medium) %>
-<%= @photo.title %>
+<%= link_to @photo.title, photo_path(@photo) %>
 <%= @photo.description %>
