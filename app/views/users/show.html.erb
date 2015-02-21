@@ -10,6 +10,9 @@
 
 <ul>
   <% @user.photos.each do |photo| %>
-  <li><%= image_tag photo.photo.url(:medium) %></li>
+  <li>
+    <p><%= image_tag photo.photo.url(:medium) %></p>
+    <p><%= link_to photo.title, photo_path(photo) %></p>
+  </li>
   <% end %>
 </ul>
