@@ -15,7 +15,6 @@ describe SessionController do
     end
     it "should set session with user id" do
       post :login, user: @user.attributes
-      puts session[:user_id]
       expect(session[:user_id]).to eq(@user.id)
     end
     it "should redirect to root_path" do
