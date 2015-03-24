@@ -41,6 +41,8 @@ gem 'bcrypt', '~> 3.1.7'
 gem "paperclip", "~> 4.2"
 
 gem 'simplecov', :require => false, :group => :test
+
+gem 'whenever', :require => false
 # Use unicorn as the app server
 # gem 'unicorn'
 
