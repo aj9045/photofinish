@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150324022404) do
+ActiveRecord::Schema.define(version: 20150324023458) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -28,7 +28,13 @@ ActiveRecord::Schema.define(version: 20150324022404) do
     t.datetime "photo_updated_at"
     t.boolean  "this_week",          default: true
     t.boolean  "last_week",          default: false
-    t.string   "upload_week"
+    t.integer  "upload_tracker_id"
+  end
+
+  create_table "upload_trackers", force: true do |t|
+    t.string   "upload_week", null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "users", force: true do |t|
