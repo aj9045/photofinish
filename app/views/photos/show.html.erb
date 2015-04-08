@@ -1,5 +1,19 @@
 <h2>A particular photo</h2>
 
-<%= image_tag @photo.photo.url(:medium) %>
-<%= link_to @photo.title, photo_path(@photo) %>
-<%= @photo.description %>
+<%= image_tag @photo.photo.url(:large), class: "block m-auto pb-2" %>
+
+<div class="photo-info orig-border w-6 m-auto">
+  <%= image_tag @photo.user.image.url(:thumb), class: "pl-2 pt-1" %>
+
+  <div class="ml-1 pt-1">
+    <p class="fnt-sz-1_5 p0 m0">
+      <a href="#">Title of photo</a>
+    </p>
+    <p class="p0 m0">
+      <%= link_to @photo.title, photo_path(@photo) %>
+    </p>
+  </div>
+  <p class="pl-2 pr-2 orig-bt pt-1">
+    <%= @photo.description %>
+  </p>
+</div>
