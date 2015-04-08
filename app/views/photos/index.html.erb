@@ -1,10 +1,12 @@
 <h2>All Photos</h2>
 
-<ul>
+<div id="container" class="m-auto w-8 p1">
   <% @photos.each do |photo| %>
-  <li>
-    <p><%= image_tag photo.photo.url(:medium) %></p>
-    <p><%= link_to photo.title, photo_path(photo.id) %></p>
-  </li>
+    <div class="box">
+      <div class="thumb">
+        <%= link_to image_tag(photo.photo.url(:medium)), photo_path(photo.id) %></a>
+        <p><%= link_to photo.title, photo_path(photo.id) %></p>
+      </div>
+    </div>
   <% end %>
-</ul>
+</div>
