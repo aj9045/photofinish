@@ -319,3 +319,7 @@ header {
 #content li {
   list-style-type: none;
 }
+
+#photo-desc {
+  border-top: 2px #496362 solid;
+}
