@@ -1,12 +1,47 @@
-<h2>Someone's Profile</h2>
+<div id="container" class="w-8 p2 m-auto2">
+      <div id="intro" class="w-10 orig-bb pb-1">
+        <%= image_tag @user.image.url(:thumb) %>
+        <div id="user-info" class="ml-2">
+          <p class="fnt-sz-2 mt-1 mb-1"><%= @user.username %></p>
+          <p class="mb-1">Member since: 06/12/2013</p>
+        </div>
+      </div>
+      <div id="content" class="w-10">
+        <ul class="p0">
+          <li>
+            <h3>Email</h3>
+            <p><%= @user.email %></p>
+          </li>
+          <li>
+            <h3>About</h3>
+            <p><%= @user.about %></p>
+          </li>
+          <!-- <li>
+            <h3>My Links</h3>
+            <ul class="p0">
+              <p class="mb-0 mt-0">LinkedIn</p>
+              <li class="mb-1 ml-3">
+                <a href="#" >http://linkedin.com/in/someone</a>
+              </li>
+              <p class="mb-0 mt-0">DeviantArt</p>
+              <li class="mb-1 ml-3">
+                <a href="#">http://deviantart.com/someone</a>
+              </li>
+              <p class="mb-0 mt-0">GitHub</p>
+              <li class="mb-1 ml-3">
 
-<p><%= image_tag @user.image.url(:thumb) %> <%= @user.username %></p>
-<p><%= @user.email %></p>
-<p><%= @user.about %></p>
-
+                <a href="#">http://github.com/someone</a>
+              </li> -->
+            </ul>
+          </li>
+        </ul>
+      </div>
 <% if session[:user_id] == @user.id %>
   <%= link_to "Edit Profile", edit_user_path(@user) %>
 <% end %>
+    </div>
+
+
 
 
 <div id="container" class="m-auto w-8 p1">

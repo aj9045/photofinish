@@ -92,6 +92,10 @@ html, body {
   margin: 0 auto;
 }
 
+.m-auto2 {
+  margin: 2% auto;
+}
+
 .m0 {
   margin: 0;
 }
@@ -290,4 +294,28 @@ a:hover {
 .photo-info div {
   display: inline-block;
   vertical-align: middle;
+}
+
+header {
+  padding: 1% 2%;
+}
+
+#intro img {
+  height: 100px;
+  width: 100px;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+#user-info {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+#user-info p {
+  width: 100%;
+}
+
+#content li {
+  list-style-type: none;
 }
