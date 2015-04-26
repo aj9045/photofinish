@@ -5,12 +5,13 @@
     <%= image_tag @photo.user.image.url(:thumb), class: "pl-2 pt-1" %>
 
     <div class="ml-1 pt-1">
-      <p class="fnt-sz-1_5 p0 m0">
-        <a href="#">Title of photo</a>
-      </p>
-      <p class="p0 m0">
+      <p class="fnt-sz-1_5 pb-6 m0">
         <%= link_to @photo.title, photo_path(@photo) %>
       </p>
+      <span>
+        by
+        <%= link_to @photo.user.username, user_path(@photo.user) %>
+      </span>
     </div>
     <p id="photo-desc" class="pl-2 pr-2 pt-1">
       <%= @photo.description %>
