@@ -1,24 +1,27 @@
-<%= form_for @user, :html => { :multipart => true } do |f| %>
-    <h3>Sign Up!</h3>
+<div id="container" class="m-auto w-5 p1">
+  <h2 id="page-header" class="mt-0 mb-4 txt-center">Sign Up!</h2>
 
-    <%= f.label :username, "Username*" %>
-    <%= f.text_field :username, placeholder: "username" %>
+    <%= form_for @user, :html => { :multipart => true } do |f| %>
 
-    <%= f.label :email, "Email*" %>
-    <%= f.text_field :email, placeholder: "email" %>
+        <%= f.label :username, "Username*" %>
+        <%= f.text_field :username, placeholder: "Username" %>
 
-    <%= f.label :about %>
-    <%= f.text_area :about, placeholder: "Tell a little about yourself!" %>
+        <%= f.label :email, "Email*" %>
+        <%= f.text_field :email, placeholder: "Email" %>
 
-    <%= f.label :image, "Profile Image*" %>
-    <%= f.file_field :image %>
+        <%= f.label :about %>
+        <%= f.text_area :about, id: "submit-desc", placeholder: "Tell a little about yourself!" %>
 
-    <%= f.label :Password, "Password*" %>
-    <%= f.password_field :password, placeholder: "Password" %>
+        <%= f.label :image, "Profile Image*" %>
+        <%= f.file_field :image %>
 
-    <%= f.label :password_confirmation, "Password Confirmation*" %>
-    <%= f.password_field :password_confirmation, placeholder: "Confirm Password" %>
+        <%= f.label :Password, "Password*" %>
+        <%= f.password_field :password, placeholder: "Password" %>
+
+        <%= f.label :password_confirmation, "Password Confirmation*" %>
+        <%= f.password_field :password_confirmation, placeholder: "Confirm Password" %>
 
 
-    <%= f.submit "Submit" %>
-<% end %>
+        <%= f.submit "Submit", class: "button" %>
+    <% end %>
+</div>
