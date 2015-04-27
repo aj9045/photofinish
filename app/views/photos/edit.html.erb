@@ -1,13 +1,16 @@
-<%= form_for @photo, :html => { :multipart => true } do |f| %>
-    <h3>Edit Photo</h3>
+<div id="container" class="m-auto w-5 p1">
+  <h2 id="page-header" class="mt-0 mb-4 txt-center">Edit Photo</h2>
+
+  <%= form_for @photo, :html => { :multipart => true } do |f| %>
 
     <%= f.label :title, "Title*" %>
     <%= f.text_field :title %>
 
     <%= f.label :description %>
-    <%= f.text_area :description, placeholder: "Tell a little about this photo" %>
+    <%= f.text_area :description, id: "submit-desc",  placeholder: "Tell a little about this photo" %>
 
-    <%= f.submit "Save" %>
+    <%= f.submit "Save", class: "button" %>
+  <% end %>
 
-  <%= link_to "Delete Photo", photo_path(@photo), method: :delete, data: { confirm: "Are you sure?" } %>
-<% end %>
+  <%= link_to "Delete Photo", photo_path(@photo), id: "delete-btn", method: :delete, data: { confirm: "Are you sure?" } %>
+</div>
