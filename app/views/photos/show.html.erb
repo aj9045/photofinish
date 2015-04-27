@@ -12,9 +12,17 @@
         by
         <%= link_to @photo.user.username, user_path(@photo.user) %>
       </span>
+
     </div>
     <p id="photo-desc" class="pl-2 pr-2 pt-1">
       <%= @photo.description %>
     </p>
   </div>
+
+  <div id="edit-photo">
+    <% if session[:user_id] == @photo.user_id %>
+      <%= link_to "Edit Photo", edit_photo_path(@photo) %>
+    <% end %>
+  </div>
 </div>
+
