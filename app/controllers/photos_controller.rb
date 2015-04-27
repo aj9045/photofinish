@@ -14,7 +14,8 @@ class PhotosController < ApplicationController
 
   def create
      @photo = Photo.new(photo_params)
-    if @photo.save
+     @user = User.find(session[:user_id])
+    if valid_upload? && @photo.save
       redirect_to @photo
     else
       render :new
@@ -51,5 +52,9 @@ class PhotosController < ApplicationController
     @photo = Photo.find(params[:id])
   end
 
+  def valid_upload?
+    last_photo = @user.photos.last
+    last_photo.this_week == false
+  end
 
 end
