@@ -36,9 +36,11 @@
       </li>
     </ul>
   </div>
-  <% if session[:user_id] == @user.id %>
-    <%= link_to "Edit Profile", edit_user_path(@user) %>
-  <% end %>
+  <div id="edit-btn">
+    <% if session[:user_id] == @user.id %>
+      <%= link_to "Edit Profile", edit_user_path(@user) %>
+    <% end %>
+  </div>
 </div>
 
 <div id="container" class="m-auto w-8 p1">
