@@ -53,8 +53,7 @@ class PhotosController < ApplicationController
   end
 
   def valid_upload?
-    last_photo = @user.photos.last
-    last_photo.this_week == false
+    @user.photos.count == 0 || @user.photos.last.this_week == false
   end
 
 end
