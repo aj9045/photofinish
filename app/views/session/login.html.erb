@@ -1,12 +1,14 @@
-<%= form_for @user, url: 'login' do |f| %>
-  <h3>Log In</h3>
+<div id="container" class="m-auto w-5 p1">
+  <h2 id="page-header" class="mt-0 mb-4 txt-center">Log In</h2>
+  <%= form_for @user, url: 'login' do |f| %>
 
-    <%= f.label :username%>
-    <%= f.text_field :username, placeholder: "username" %>
+      <%= f.label :username%>
+      <%= f.text_field :username, placeholder: "username" %>
 
-    <%= f.label :Password %>
-    <%= f.password_field :password, placeholder: "password" %>
+      <%= f.label :Password %>
+      <%= f.password_field :password, placeholder: "password" %>
 
-    <%= f.submit "Log In" %>
+      <%= f.submit "Log In", class: "button" %>
 
-<% end %>
+  <% end %>
+</div>
