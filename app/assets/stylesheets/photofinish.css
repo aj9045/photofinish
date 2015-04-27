@@ -454,3 +454,9 @@ form {
   text-align: right;
   text-decoration: underline;
 }
+
+#logo {
+  height: 300px;
+  display: block;
+  margin: 2% auto 0 auto;
+}
