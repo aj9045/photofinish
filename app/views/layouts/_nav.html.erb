@@ -1,13 +1,18 @@
-<
-
-<%= link_to "All Photos", root_path %>
-<%= link_to "All Users", users_path %>
-
-<% if session[:user_id].nil? %>
-  <%= link_to "Sign Up", new_user_path %>
-  <%= link_to "Log In", login_path %>
-<% else %>
-  <%= link_to "Submit Photo", new_photo_path %>
-  <%= link_to "Profile", user_path(session[:user_id])%>
-  <%= link_to "Logout", logout_path %>
-<% end %>
+<nav id="navbar" class="m-auto2">
+  <div id="nav-left" class="i-b fl w-5 txt-l">
+    <%= link_to "All Photos", root_path, class: "nav-link" %>
+    <%= link_to "All Users", users_path, class: "nav-link" %>
+    <% unless session[:user_id].nil? %>
+      <%= link_to "Submit Photo", new_photo_path, class: "nav-link" %>
+    <% end %>
+  </div>
+  <div id="nav-right" class=" fr i-b w-5 txt-r">
+    <% if session[:user_id].nil? %>
+      <%= link_to "Sign Up", new_user_path, class: "nav-link" %>
+      <%= link_to "Log In", login_path, class: "nav-link" %>
+    <% else %>
+      <%= link_to "Profile", user_path(session[:user_id]), class: "nav-link"%>
+      <%= link_to "Logout", logout_path, class: "nav-link" %>
+    <% end %>
+  </div>
+</nav>
