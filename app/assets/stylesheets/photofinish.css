@@ -448,7 +448,7 @@ form {
   margin: 0 auto;
 }
 
-#delete-btn, #edit-photo {
+#delete-btn, #edit-btn {
   display: block;
   margin-top: 50px;
   text-align: right;

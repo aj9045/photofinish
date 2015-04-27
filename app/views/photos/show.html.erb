@@ -19,7 +19,7 @@
     </p>
   </div>
 
-  <div id="edit-photo">
+  <div id="edit-btn">
     <% if session[:user_id] == @photo.user_id %>
       <%= link_to "Edit Photo", edit_photo_path(@photo) %>
     <% end %>
