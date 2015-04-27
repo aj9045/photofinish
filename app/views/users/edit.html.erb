@@ -1,20 +1,23 @@
-<%= form_for @user, :html => { :multipart => true } do |f| %>
-    <h3>Edit Your Profile</h3>
+<div id="container" class="m-auto w-5 p1">
+  <h2 id="page-header" class="mt-0 mb-4 txt-center">Edit Your Profile</h2>
+   <%= form_for @user, :html => { :multipart => true } do |f| %>
 
-    <%= f.label :username, "Username*" %>
-    <%= f.text_field :username %>
+        <%= f.label :username, "Username*" %>
+        <%= f.text_field :username %>
 
-    <%= f.label :email, "Email*" %>
-    <%= f.text_field :email %>
+        <%= f.label :email, "Email*" %>
+        <%= f.text_field :email %>
 
-    <%= image_tag @user.image.url(:thumb) %>
-    <%= f.label :image %>
-    <%= f.file_field :image %>
+        <%= image_tag @user.image.url(:thumb) %>
+        <%= f.label :image %>
+        <%= f.file_field :image %>
 
-    <%= f.label :about %>
-    <%= f.text_area :about, placeholder: "Tell a little about yourself!" %>
+        <%= f.label :about %>
+        <%= f.text_area :about, id: "submit-desc", placeholder: "Tell a little about yourself!" %>
 
-    <%= f.submit "Save" %>
+        <%= f.submit "Save", class: "button" %>
 
-  <%= link_to "Delete Account", user_path(@user), method: :delete, data: { confirm: "Are you sure?" } %>
-<% end %>
+    <% end %>
+
+    <%= link_to "Delete Account", user_path(@user), id: "delete-btn", method: :delete, data: { confirm: "Are you sure?" } %>
+</div>
