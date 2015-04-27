@@ -1,5 +1,6 @@
 html, body {
   background-color: #3C8182;
+  font-family: Tahoma, Geneva, sans-serif;
 }
 
 /*BORDER*/
@@ -406,4 +407,44 @@ a:hover {
   margin: 5%;
   padding: 1%;
   font-size: 1.3em;
+}
+
+input {
+  margin: 15px auto;
+  width: 375px;
+  display: block;
+  border: 1px solid #999;
+  height: 25px;
+  -webkit-box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.3);
+  -moz-box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.3);
+  box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.3);
+}
+
+#submit-desc {
+  width:375px;
+  height:150px;
+  display: block;
+  margin: 15px auto;
+}
+
+input.button {
+  width: 100px;
+  background: #3C8182;
+  color: #fff;
+  font-size: 1em;
+  height: 40px;
+  -webkit-border-radius: 15px;
+  -moz-border-radius: 15px;
+  border-radius: 15px;
+  border: 1px solid #999;
+}
+
+input.button:hover {
+  background: #fff;
+  color: #3C8182;
+}
+
+form {
+  text-align: center;
+  margin: 0 auto;
 }
