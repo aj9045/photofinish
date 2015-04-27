@@ -1,7 +1,16 @@
-<h2>All Users</h2>
+<div id="container" class="m-auto w-8 p1">
+  <h2 id="page-header" class="mt-0 mb-4 txt-center">All Users</h2>
 
-<ol>
-  <% @users.each do |user| %>
-  <li><%= link_to user.username, user_path(user.id) %></li>
-  <% end %>
-</ol>
+  <ol>
+    <% @users.each do |user| %>
+    <li><%= link_to user.username, user_path(user.id) %>
+      <% if user.photos.count == 1 %>
+        <p><%= user.photos.count %> entry</p>
+      <% else %>
+        <p><%= user.photos.count %> entries</p>
+      <% end %>
+    </li>
+
+    <% end %>
+  </ol>
+</div>
