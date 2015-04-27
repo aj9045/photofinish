@@ -1,5 +1,5 @@
 html, body {
-  background-color: #3C8182;
+  background-color: #4bd6cf;
   font-family: Tahoma, Geneva, sans-serif;
 }
 
@@ -276,7 +276,7 @@ a {
 }
 
 a:hover {
-  color: #3C8182;
+  color: #1fa69d;
 }
 
 /* DISPLAY */
@@ -428,7 +428,7 @@ input {
 
 input.button {
   width: 100px;
-  background: #3C8182;
+  background: #1fa69d;
   color: #fff;
   font-size: 1em;
   height: 40px;
@@ -440,7 +440,7 @@ input.button {
 
 input.button:hover {
   background: #fff;
-  color: #3C8182;
+  color: #1fa69d;
 }
 
 form {
