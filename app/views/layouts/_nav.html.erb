@@ -1,7 +1,9 @@
 <nav id="navbar" class="m-auto2 w-8">
   <div id="nav-left" class="i-b fl w-5 txt-l">
-    <%= link_to "All Photos", root_path, class: "nav-link" %>
-    <%= link_to "All Users", users_path, class: "nav-link" %>
+    <%= link_to "This Week", root_path, class: "nav-link" %>
+    <%= link_to "Last Week",  last_week_path, class: "nav-link" %>
+    <%= link_to "All Photos", photos_path, class: "nav-link" %>
+  <!--   <%= link_to "All Users", users_path, class: "nav-link" %> -->
     <% unless session[:user_id].nil? %>
       <%= link_to "Submit Photo", new_photo_path, class: "nav-link" %>
     <% end %>
