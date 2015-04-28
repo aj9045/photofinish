@@ -13,7 +13,8 @@ Rails.application.routes.draw do
   post "/login" => "session#login"
   get "/logout" => "session#logout"
 
-
+  get "/this_week" => "photos#this_week"
+  get "/last_week" => "photos#last_week"
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
