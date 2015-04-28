@@ -53,9 +53,11 @@ describe PhotosController do
   describe "Post #create" do
     context "valid attributes" do
       it "saves new photo" do
+        @user.photos.last.update(this_week: false)
         expect{ post :create, photo: attributes_for(:photo, user_id: @user.id)}.to change(Photo, :count).by(1)
       end
       it "redirects to new photo" do
+        @user.photos.last.update(this_week: false)
         post :create, photo: attributes_for(:photo, user_id: @user.id)
         expect(response).to redirect_to photo_path(assigns(:photo))
       end
