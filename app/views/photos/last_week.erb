@@ -1,0 +1,13 @@
+<div id="container" class="m-auto w-8 p1">
+  <h2 id="page-header" class="mt-0 mb-4 txt-center">Last Week's Photos</h2>
+  <% @photos.each do |photo| %>
+    <% if photo.last_week %>
+      <div class="box">
+        <div class="thumb">
+          <%= link_to image_tag(photo.photo.url(:medium)), photo_path(photo.id) %></a>
+          <p><%= link_to photo.title, photo_path(photo.id) %></p>
+        </div>
+      </div>
+    <% end %>
+  <% end %>
+</div>
