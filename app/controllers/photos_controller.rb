@@ -5,6 +5,14 @@ class PhotosController < ApplicationController
     @photos = Photo.all
   end
 
+  def this_week
+    @photos = Photo.all
+  end
+
+  def last_week
+    @photos = Photo.all
+  end
+
   def show
   end
 
