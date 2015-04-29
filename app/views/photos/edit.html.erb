@@ -6,6 +6,8 @@
     <%= f.label :title, "Title*" %>
     <%= f.text_field :title %>
 
+    <%= image_tag @photo.photo.url(:medium), class: "block m-auto2" %>
+
     <%= f.label :description %>
     <%= f.text_area :description, id: "submit-desc",  placeholder: "Tell a little about this photo" %>
 
