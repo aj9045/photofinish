@@ -73,6 +73,8 @@ GEM
       mime-types
     pg (0.18.1)
     rack (1.5.2)
+    rack-handlers (0.7.0)
+      rack
     rack-test (0.6.3)
       rack (>= 1.0)
     rails (4.1.8)
@@ -164,6 +166,7 @@ DEPENDENCIES
   jquery-rails
   paperclip (~> 4.2)
   pg
+  rack-handlers
   rails (= 4.1.8)
   rspec-rails (~> 3.0)
   sass-rails (~> 4.0.3)

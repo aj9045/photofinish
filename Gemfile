@@ -45,7 +45,7 @@ gem 'simplecov', :require => false, :group => :test
 gem 'whenever', :require => false
 # Use unicorn as the app server
 gem 'unicorn'
-
+gem 'rack-handlers'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
