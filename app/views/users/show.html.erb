@@ -3,7 +3,7 @@
     <%= image_tag @user.image.url(:thumb) %>
     <div id="user-info" class="ml-2">
       <p class="fnt-sz-2 mt-1 mb-1"><%= @user.username %></p>
-      <p class="mb-1">Member since: 06/12/2013</p>
+      <p class="mb-1">Member since: <%= @user.created_at.strftime('%m/%Y') %></p>
     </div>
   </div>
   <div id="content" class="w-10">
