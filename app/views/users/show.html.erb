@@ -1,6 +1,6 @@
 <div id="container" class="w-8 p2 m-auto2">
   <div id="intro" class="w-10 orig-bb pb-1">
-    <%= image_tag @user.image.url(:thumb) %>
+    <%= image_tag @user.image.url(:profile) %>
     <div id="user-info" class="ml-2">
       <p class="fnt-sz-2 mt-1 mb-1"><%= @user.username %></p>
       <p class="mb-1">Member since: <%= @user.created_at.strftime('%m/%Y') %></p>
