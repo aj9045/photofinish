@@ -1,12 +1,18 @@
 <nav id="navbar" class="m-auto2 w-8">
   <div id="nav-left" class="i-b fl w-6 txt-l">
-    <%= link_to "This Week", root_path, class: "nav-link" %>
-    <%= link_to "Last Week",  last_week_path, class: "nav-link" %>
-    <%= link_to "All Photos", photos_path, class: "nav-link" %>
-  <!--   <%= link_to "All Users", users_path, class: "nav-link" %> -->
-    <% unless session[:user_id].nil? %>
-      <%= link_to "Submit Photo", new_photo_path, class: "nav-link" %>
-    <% end %>
+    <ul>
+      <li class="category"><a class="drop">Some words</a>
+        <ul class="drop-menu">
+          <li><%= link_to "This Week", root_path, class: "nav-link" %></li>
+          <li><%= link_to "Last Week",  last_week_path, class: "nav-link" %></li>
+          <li><%= link_to "All Photos", photos_path, class: "nav-link" %></li>
+        <!--   <%= link_to "All Users", users_path, class: "nav-link" %> -->
+          <% unless session[:user_id].nil? %>
+            <li><%= link_to "Submit Photo", new_photo_path, class: "nav-link" %></li>
+          <% end %>
+        </ul>
+      </li>
+    </ul>
   </div>
   <div id="nav-right" class="fr i-b w-3 txt-r">
     <% if session[:user_id].nil? %>
