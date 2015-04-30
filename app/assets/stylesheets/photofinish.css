@@ -543,3 +543,9 @@ li {
 .drop:hover {
   cursor: pointer;
 }
+
+.category img {
+  margin-top: -10px;
+  display: inline-block;
+  height: 40px;
+}
