@@ -7,7 +7,7 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-  <%= image_tag "photofinish-transparent.png", id: "logo" %>
+  <%= link_to image_tag("photofinish-transparent.png", id: "logo"), root_path %>
   <%= render "/layouts/nav" %>
 
   <%= yield %>
