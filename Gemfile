@@ -48,7 +48,7 @@ gem 'unicorn'
 gem 'rack-handlers'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
-
+gem 'rails_12factor'
 # Use debugger
 # gem 'debugger', group: [:development, :test]
 
