@@ -348,6 +348,8 @@ a:hover {
 .thumb img {
   position: relative;
   max-width: 200px;
+  display: block;
+  margin: 0 auto;
 }
 
 .caption {
