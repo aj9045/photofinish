@@ -373,8 +373,6 @@ a:hover {
   vertical-align: middle;
 }
 
-
-
 #intro img {
   height: 100px;
   width: 100px;
@@ -446,7 +444,6 @@ a:hover {
 
 .footer-link {
   display: inline-block;
-
   font-size: 1em;
 }
 
@@ -503,3 +500,46 @@ form {
   margin: 2% auto 0 auto;
 }
 
+/* FIX*/
+
+ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.drop {
+  text-align: center;
+}
+
+.category {
+  display: inline-block;
+}
+
+li {
+  margin: 0;
+  width: 180px;
+}
+.drop-menu {
+  position: absolute;
+  /*border: 1px solid black;*/
+  background-color: #4bd6cf;
+  z-index: 400;
+  border-radius: 10%;
+  border: 1px solid #1fa69d;
+}
+
+.drop, .drop-menu li a {
+  display: block;
+  padding: 5px;
+  font-size: 1.3em;
+}
+
+.drop-menu li a:hover {
+  color: black;
+  background-color: #1fa69d;
+}
+
+.drop:hover {
+  cursor: pointer;
+}
